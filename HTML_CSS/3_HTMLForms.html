@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML FORMS</title>
+    </head>
+    <body>
+        <h1>HTML FORMS</h1>
+
+        <form action=""> action attribute serverside Related  {tells browser what to do when we submit the Form}
+            <label for="userName">Enter userName:</label> label attached to id of input Text Field 
+            <input type="text" id="userName"> id must be unique no other element can have same id 
+            - other elements can also have id attribute not limited to Forms any tags like h1 ,p , br etc
+            - id used to uniquely Identify element, also use as hook in CSS later , can link up with label, JS hooks
+
+            <label for="email">enter Email:</label>
+            <input type="email" id="email"> setting input Type to email performs basic browser side validation like keyboard in mobile switched to symbols @ , valid email check 
+
+            <br><br>
+            <label for="password">enter Password:</label>  
+            <input type="password" id="password" name="password">
+
+           # name field attribute for serverSide processing example in PHP, generally id==name field attribute values
+                use of Name field Attribute - used to group together different parts of form example RadioButton under Same Group
+        </form>
+
+    </body>
+</html>
+
+# required attribute 
+    - to make sure user enters field add required attribute at the end after id name etc.
+        <input type="text" name="" id="" required>
+
+# Radio Buttons
+    since name attribute is same , if one is checked other become unchecked 
+    to multi select using radio button use different name attribute
+<form>
+    <p>Select Gender:</p>
+    <input type="radio" name="gender" value="male">Male<br>
+    <input type="radio" name="gender" value="female">Female<br>
+    <input type="radio" name="gender" value="other">Other<br>
+            value attribute depicts value when form Submitted
+</form>
+
+<form action="">
+    <p>Select your Age:</p>
+        <input type="radio" name="age" value="0-25" id="option-1">
+            <label for="option-1">0-25</label>  # instead of direct labelling like above used label tag separately for more standard approach
+        <input type="radio" name="age" value="26-50" id="option-2">
+            <label for="option-2">26-50</label>
+</form>
+
+# <label for=""></label> for attribute looks for id=" " not name=" "
+    insted ;name; used for backend developer PHP developer example also used to group together different parts of form example RadioButton under Same Group
+        
+
+# Drop Down Menu 
+    using <select></select> Tag and <option value=""></option> tag
+<form action="">
+    <label for="">Security Question:</label>
+    <select name="question" id="question">
+        <option value="q1">What favorite color?</option>
+        <option value="q2">What vegetable?</option>
+        <option value="q3">What cloth?</option>
+    </select>
+
+    <label for="answer">Answer of Security Question:</label>
+    <input type="text" id="answer" name="answer">
+</form>
+
+# Text Area Tag
+    used to take Multi Line Input 
+<label for="bio">Enter Bio:</label>
+<textarea name="bio" id="bio" cols="30" rows="10" placeholder="Temp Text...">EnterBio appears Inside:</textarea> {placeholder gets overwritten if inside Text Present}
+    # 30x10 default value cols x rows can overwrite value using CSS
+<textarea name="" id="" cols="30" rows="10" placeholder=""></textarea>
+    - placeholder attribute can be used with other Input Tags {can act as sub to label}
+
+# Submit Button 
+    <input type="submit" value="submit the Form">   here value is the text on data not data submitted for Backend?
+
+    - when we submit form the values entered by the User in the form are submitted to the Script <form action="script.html"></form> in the action attribute of the form in backend , also appears in the URL , sent to server for processing , JS can take over 
