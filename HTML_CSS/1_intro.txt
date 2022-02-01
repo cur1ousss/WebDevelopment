@@ -1,0 +1,10 @@
+# HTML 
+    - HyperText Markup Language{Markup Language not Programming Language}
+    - used to structure content on webPage{images,text,forms etc}
+
+# HTML tags/ elements
+    some have opening closing / some don't
+
+# CSS
+    Cascading Style Sheets
+    work alongside HTML to make look better

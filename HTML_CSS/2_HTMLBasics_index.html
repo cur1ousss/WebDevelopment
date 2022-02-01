@@ -1,0 +1,83 @@
+# call homepage index.html since when navigate to any website it looks in the root directory for index.html {default homepage name is index.html}
+
+# if open html file through File Explorer it gets opened using FileProtocol in URL address bar of browser, other method of opening thorugh Local Development server vs code extension using HTTPProtocol
+
+# HTML is case Sensitive in Tags
+
+# Indentation preferred for readability altho works/runs without indentation as well
+
+<!DOCTYPE html>
+<html>
+<head>
+        # contents of head are metaData,extra Info about webpage like Title 
+        <title>Learning HTML</title>
+</head>
+<body>
+        # contents of body displayed on webpage
+        <p>
+                Hello Niggers
+                line 2  # appears in same line above
+        </p>
+        <p>
+                second P Tag
+        </p>
+</body>
+</html>
+
+# <strong></strong> strong tag makes surrounding text Bold
+# <em></em> emphasize makes Text Italics
+# <small></small> makes word size smaller
+
+# Heading Tags H1 -> H6  H1 biggest
+<h1></h1>
+<h4></h4>
+<h6></h6>
+
+# Unordered list {Bulleted}
+<ul>
+        <li> list element 1 </li>
+        <li> list element 2 </li>
+</ul>
+
+# Ordered list {1. 2. 3. 4. ....}
+<ol>
+        <li> list element 1 </li>
+        <li> list element 2 </li>
+</ol>
+
+# Div Tag
+<div></div> divide content into sections, group together elements which belong together
+        since launch of HTML5 semantic tags , use of Div tags is decreasing
+        don't have effect visually but logically
+
+# Span Tag
+<span></span> way to add CSS or JS hook into part of text or html
+
+# Br break tag
+<br> adds lineBreak , no closing tag on this
+
+# Hr horizontal rule tag
+<hr> inserts horizontal plain line 
+        earlier had <hr /> self closing tags now / not needed
+
+# Attributes inside tags 
+        Attributes give more information about that tag to the browser
+<img src="" alt=""> img tag , src attribute contains path, path of image is relative to this file, alt attribute describes image in textual form to screen readers just for accessibility no visual effect of alt attribute
+        path of image
+                img/ninja.jpg - relative path in file and http protocol
+                /img/ninja.jpg - root / path in http protocol
+
+# Anchor Tag {href}
+<a href=""></a> anchor tag reference to other links, webpages , href attribute hyperlink reference 
+        <a href="www.google.com">Click to Go Google</a>
+        <a href="about.html">About Page Inside</a>
+
+# Blockquote Tag
+<blockquote></blockquote> used to quote something from another source/website
+        <blockquote cite="www.wikipedia.com/xd"> random quote from xd</blockquote>  cite attribute used to mark the original source  
+
+# Basic css styling as p tag attribute
+<p style="color:red;">Styled Text</p>
+
+# Comments in HTML 
+<!-- comment here -->
