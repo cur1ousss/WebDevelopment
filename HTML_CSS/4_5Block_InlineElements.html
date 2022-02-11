@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/4_Styles.css">
+        <title>
+            Block level & Inline Elements
+        </title>
+    </head>
+    <body>
+        <h2>Inline Elements</h2>
+
+        <span>span tag</span>
+        <em>em tag</em> 
+        <a href="">anchor Tag</a>
+        <span>span tag</span>
+
+        <h2>Block Level Elements</h2>
+
+        <div>div tag</div>
+        <div>another div tag</div>
+        <h3>h3 tag</h3>
+        <p>paragraph tag</p>
+        <ul>
+            <li>li tag</li>
+            <li>another li tag</li>
+        </ul>
+    </body>
+</html>
+
+# Can see how much width they take by Inspecting in Browser F12
+
+*****************************************************************************
+
+# Converting/Making inline element to Block level element
+    # make .css file and link to this .html 
+        span{
+            display:    block;
+        }
+
+# Converting/Making Block level element to inline element
+    # make .css file and link to this .html 
+        div{
+            display:    inline;
+        }
+
+# 3rd display type inline-block -> best of both worlds , same inline elements with all margins of block 
+    # div{
+        display: inline-block;
+    }
+
+# Margin applied differently to inline elements and block level elements
+
+# Margin outermost - Border of element - Padding is space in between border and Content of element 
+
+# Margins in Block Level Elements
+            Margin*******************************  
+            *    Border************************ *
+            *    *    Padding**************** * *
+            *    *    *   ElementTextData   * * *
+            *    *    Padding**************** * *
+            *    Border************************ *
+            Margin*******************************
+
+
+# Margins in inline Elements
+        no margins at top & bottom , only left and right margins
+
+            *****Border************************ *
+            *    *    Padding**************** * *
+            *    *    *   ElementTextData   * * *
+leftMargin  *    *    Padding**************** * * right margin outermost
+outermost   *****Border************************ *
+
+
+# CSS for inline & block level Elements 
+
+for block level: .CSS 
+div{
+    margin: 2px; // applies to top bottom left right border if not specific mentioned
+    border: 3px dashed crimson;
+    padding: 20px;
+}
+    # in block level can have multiple margin properties left right top bottom
+
+span{ // inline element 
+    padding: 13px;
+    margin-left: 1px;
+}   
+    # in inline only have left and right margin properties
+    
+// in inline Elements vertical Padding may stack/merge if manually F12 see website
+// in block level elements Margin may merge top bottom of 1st and 2nd
+
+# Default Browser Styles {User Agent Style Sheets}
+    when create a html file browser styles certain elements in a particular way automatically example - headings <h> tag are bold and big, anchor tag <a> has underline by default style and purple color highlighted , paragraph <p> have margin applied to them 
+        // visible in Developer Console , can override with our Own CSS

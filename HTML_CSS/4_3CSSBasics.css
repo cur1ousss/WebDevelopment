@@ -1,0 +1,22 @@
+/*
+# CSS
+    Cascading Style Sheets
+        a list of CSS Styles/rule sets
+
+# selectors - element that we want to target to design/decorate/style
+# declarations - key value pairs inside {} of selectors
+                >> property - value
+                >> has ; at end of declarations otherwise CSS won't work
+Example - 
+    selectors{
+       declarations;
+       declarations;
+    }
+
+# Using CSS in HTML document -
+    # adding directly CSS to style tag
+    # using external Styles sheets
+
+
+
+*/

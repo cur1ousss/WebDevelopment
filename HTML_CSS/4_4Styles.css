@@ -1,0 +1,90 @@
+/*
+Generally Name Styles.css of the CSS styling file
+*/
+
+h1{
+    color: orange;
+    background-color: rebeccapurple;
+    font-size: 100px;
+    text-decoration: line-through;
+                    /* - underline
+                       - none - to remove bydefault underline Decoration in href HyperLinks   */
+    font-family: Arial;
+                /* - use Web-Safe fonts meaning that everyone has not custom that need to install { https://www.w3schools.com/cssref/css_websafe_fonts.asp }
+                - by default font Family is Times New Roman */
+    text-align: center;
+                /* by default is Left */
+}
+p{  /* All selector <p> tags will implement inherit this theme */
+    color: purple;
+    text-decoration: underline;
+    text-align: right;
+    line-height: 30px;   /* gap between 2 lines */
+    letter-spacing: 3px; /* gap between letters of words */
+    column-count: 3; /* split the given paragraph into X columns */
+    column-gap: 3px; /* gap between columns */
+
+}
+
+ul{
+    border-width: 4px;  /* width of border lines around unordered list */
+    border-style: solid; /* type of border since by default <ul> is a block element border gets drawn across whole screen width not just <ul> element size */
+    border-color: crimson;
+    /* Alternative to Writing above 3 properties individually can directly combine and write all together */
+    border: 4px solid purple;
+    border-bottom: 4px dotted greenyellow;
+    border-left: 4px dashed chocolate;
+
+}
+li{
+    list-style-type: disc; /* disc is the circle in bulleted list can change to square , none */
+    text-shadow: 3px 3px crimson;
+                /* offset to right of shadow from the actual text , vertical offset, shadow color  */
+}
+
+/* 
+# HEX Color Codes
+    if need to use Custom Color use Hex Code values of Color  
+start with # then 6 digits
+example -  #42f4f1
+Hex Color code made up of 3 different Channels
+#     R   G   B
+   # 42  f4  f1
+range of channels - 0 represents darkest shade
+                    f represents brightest shade
+                    #000000 all 0's is Black
+                    #FFFFFF all F's is White
+                    // use color Picker online, photoshop/gimp to find hex color values or vs code extension inbuilt etc...
+*/
+
+/***************************************************************************/
+
+/*
+Now need to link this external style sheet in the <head> tag of the HTML file
+<head>
+    <link rel="stylesheet" href="Path/of/CSS/File">
+</head>
+*/
+
+/******************************************************************************/
+/* 
+# HTML files/docs made up of loads of different tags/elements
+    - inline Elements
+    - block level Elements
+Difference is how they are displayed and how much room they take on screen
+
+    # inline Elements - span,img,strong,em,a etc... take up room next to each other if written consecutively 
+        they don't take up any more room than their content needs
+    
+    # block level Elements - Take up whole width of the page regardless of content , do not sit side by side take up new line every time consecutive written
+        p,div,h2,h3,ul,li etc...
+    
+        HTML5 semantic tags are also block level elements
+
+    Example - 
+    <p> Some random paragraph about some random topic including the prefire and ping density ratio provided by <a href="www.leetify.com">LeetifyStats</a> dot org at the provided subscription model of the facts</p>
+        // inline elements <a> tag nested inside block level element <p> tag
+        // don't nest block level element inside inline elements <p> tag inside <a> tag
+        // can nest block level element inside another block level element 
+            <p> inside <div> || <p> inside another <p> tag
+    */
