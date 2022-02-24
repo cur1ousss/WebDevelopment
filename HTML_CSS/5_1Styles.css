@@ -1,0 +1,223 @@
+/* 
+# Use Classes as Hooks
+    # but if only write <p> tag Selector it will apply theme to all <p> present , therefore to target specific use Class attribute in html which provides us with a hook for CSS to hook into that and use it as a selector so we can style just that Element with that Class
+
+# Multiple selectors can have same Class name attributes hence same hooks effects of css
+
+# To Target Specific <p> tag refer by class Attribute given to it in .html file 
+always use . to refer to class attribute
+*/
+p{
+    color: crimson;
+    font-size: 37px;
+}
+.error{     
+    /* will apply schemeing to all elements irrespective of element Type with Class attribute of 'error' */
+    color: rgb(194, 125, 194);
+}
+
+/* to go more specific on Type of Element and its class attribute if Class attirbute name Same use Element.ClassAttribute to refer to selector
+    >>  Element.class
+*/
+p.error{
+    color: purple;
+    text-align: center;
+    font-size: 12px;
+}
+
+p.Success{  
+    /* 
+       >> Element.class1    
+     will Appply to all elements that have Success class attribute whether singleHandedly present or present alongside other class attributes
+    
+    to go more specfic to specify element with multiple class Attributes use Chaining 
+      >>  Element.class1.class2...
+    */
+    color: yellow;
+    text-align: left;
+    font-size: 20px;
+}
+
+p.Success.Feedback{
+    color: blue;
+    text-align: right;
+    font-size: 33px;
+    border: 3px dashed #e79d12;
+}
+
+/*!*!*! 
+        Can use ids as CSS hooks as well but generally prefered to refer CSS hooks by Class Attributes in Element definition in .html
+
+ids later more used in JavaScript hooks
+
+to use ids as CSS hooks refer ids by # 
+>> #idName{
+    declarations 1
+    declarations 2
+   }
+*/
+#contentDiv{
+    background-color: #161414;
+    padding: 13px;
+    padding-left: 17px;
+    padding-right: 17px;
+}
+/* specific Id */
+div#contentDiv{
+    text-align: center;
+}
+
+/* 
+ids unlike class attributes must be unique to each element hence Class attributes better for reusability as CSS hooks
+    ids not prefered as CSS hooks by Shaun Net Ninja Leeet
+*/
+
+/* generate Random text in VS code press Type 'Lorem' then Enter */
+/* inserting multiple cursor hold down ALT and press Mouse 1 pointer at locations */
+
+/************************************************************************/
+/*
+# Descendant Selectors 
+    targetting children inside a parent element, example <p> tags inside of parent <div> tag and not other <p> tags that are outside of that specific <div> tag
+
+in .CSS
+
+parentElement childElement{
+
+    declarations 1...
+}
+    - scheme will apply to all elements of type childElement in that specific parent nest
+
+*/
+
+div p{
+    color: aquamarine;
+}
+
+div p a{    
+    /* will target anchor tag <a> inside of <p> tag of inside of <div> tag specific nested Chaining Order */
+    color: red;
+}
+
+div .error{ 
+    /* {with space} [descendants have space] will target elements with class Attribute error inside of Div parent nest */
+    color: turquoise;
+}
+/* whereas */
+div.error{
+    /* {without space}[chained element's class attributes][targeting specific <div>] will target <div> elements with class attribute of error */
+    color: pink;
+}
+
+/* By default, browsers always place a line break before and after the <div> element. */
+
+/************************************************************************/
+
+/* # Attribute Selectors
+        - in .CSS
+  
+     >> ElementTag[Attribute]{
+            declarations1
+        }
+*/
+
+/* targeting specfic type of attributes, scheme applies to all attributes */
+a[href]{
+    background-color: #7dd37d;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Targeting a specfic attribute with exact specific value */
+a[href="www.google.com"]{
+    background-color: rgb(231, 139, 231);
+    text-transform: uppercase;
+    text-decoration: none;
+    text-decoration: underline;
+    border: 3px dashed crimson;
+}
+
+/* 
+- pattern matching in attribute selector using 
+        >> attribute*="value"
+            *= means check if it includes value
+    it is case Sensitive
+
+        >> attribute$="value"
+            $= means check if Ends in example $=".com" to check if dot com website
+
+    */
+a[href*="netNinja"]{
+    background-color: #30b5f3;
+}
+
+/* use of $ practically if file on server ends in .pdf can add pdf image as background touche niche edits */
+a[href$=".com"]{
+    color: orange;
+}
+
+
+/* in Above using attribute selectors to target elements with specific attributes which in turn have specific values */
+
+/* ****************************************************************************
+
+ # Cascade
+        - CSS - Cascading styles sheets
+        - cascade literally means like waterfall that pours downwards , Cascades from top to bottom
+    Applies to CSS - flowing of CSS properties from top to bottom parent to child 
+        raises 2 concepts
+                    - inheritance
+                    - specificity
+
+        # Inheritance
+            - HTML elements can inherit CSS properties that are applied to their parents 
+        
+        * HTML element                      * CSS rule        
+        <div>                               div{
+            <p> hello </p>                      color: red;
+        </div>                              }
+
+    - <p> tag will also inherit color red of parent div
+    extends layers deep
+
+            * HTML element
+        <div>
+            <p>hello, <span>ninjas</span> </p>
+        </div>
+            - <span> will inherit property of great grandparent <div> tag 
+
+    * Things that are NOT inherited -
+            margin, padding, background styles, borders
+                - example - each <p> inside <div> won't get a border only the outer <div> division will get a border
+    
+    * Mainly fonts, textStyles and colors are inherited
+            - example - color applied to <div> tag will apply color scheme to all <p> tag inside the <div> tag
+            - font-weight: bold will apply to all child elements as well
+*/
+/* if want to Force Inherit parent properties to children example border - then use inherit keyword */
+div{
+    color: lightcoral;
+    border: 1px dashed gray;
+    margin: 40px;
+    font-weight: bold;
+}
+p{
+    /* using 'inherit' property inherit something that isn't automatically inherited*/
+        /* using 'inherit' will look at the parents of the <p> tag we are styling here parent is <div> and if we have a style for the border and the margin used added to the parents , then inherit those values here  */
+        /* won't apply to <p> tags who have different parrent */
+    border: inherit;
+    margin: inherit;
+    color: crimson; /* the attribute defined in more specific Selector will override the CSS property of the parent {closest used hence child's property used}  [concept of Specificity] */ 
+}
+/* Precedence is from TOP to BOTTOM , so BOTTOM has more prioirty in Properties effect since most Recent , so <p> tags will have color orange */
+p{
+    color: orange;
+}
+/* HOWEVER, more specificity overrides this rules , so using more specific selector the Bottom altho has more precedence , Above one will have more Weight due to more Specificity */
+div p{
+    color: purple;
+}
+
+/* more on Inheritance and Specificty in Cascade
+        https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade
+*/
