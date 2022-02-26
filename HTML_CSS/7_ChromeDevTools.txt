@@ -1,0 +1,13 @@
+- open using F12
+# Elements tab for Site Source code
+    # either inspect elements through visual or through elements tab    
+        elements tab gives overview of structure
+
+# Sources tab
+    ## Add folder to workspace to store permanent changes
+
+# styles tab 
+    at bottom for css styling {default user agent styles sheets are loaded}
+
+# Console tab
+    for js 
